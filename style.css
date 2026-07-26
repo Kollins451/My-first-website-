@@ -16,6 +16,7 @@ body {
   color: #222;
 }
 
+
 /* =========================
    NAVIGATION
 ========================= */
@@ -59,6 +60,40 @@ nav {
   color: #60a5fa;
 }
 
+
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+#menu-toggle {
+  display: none;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+
+/* =========================
+   DARK / LIGHT MODE BUTTON
+========================= */
+
+#theme-toggle {
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+  transition: transform 0.3s ease;
+}
+
+#theme-toggle:hover {
+  transform: rotate(20deg) scale(1.1);
+}
+
+
 /* =========================
    SECTIONS
 ========================= */
@@ -75,6 +110,7 @@ section h2 {
   margin-bottom: 40px;
   color: #111827;
 }
+
 
 /* =========================
    HOME / HERO
@@ -99,27 +135,62 @@ section h2 {
   color: #111827;
 }
 
+.hero h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #2563eb;
+}
+
 .hero p {
   font-size: 20px;
   margin-bottom: 30px;
   color: #4b5563;
 }
 
-.cta-button {
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.cta-button,
+.secondary-button {
   display: inline-block;
   padding: 14px 30px;
-  background: #2563eb;
-  color: white;
-  text-decoration: none;
   border-radius: 8px;
   font-weight: bold;
+  text-decoration: none;
   transition: 0.3s;
+}
+
+.cta-button {
+  background: #2563eb;
+  color: white;
 }
 
 .cta-button:hover {
   background: #1d4ed8;
   transform: translateY(-3px);
 }
+
+.secondary-button {
+  background: transparent;
+  color: #2563eb;
+  border: 2px solid #2563eb;
+}
+
+.secondary-button:hover {
+  background: #2563eb;
+  color: white;
+  transform: translateY(-3px);
+}
+
 
 /* =========================
    SERVICES
@@ -149,6 +220,7 @@ section h2 {
   color: #2563eb;
 }
 
+
 /* =========================
    SKILLS
 ========================= */
@@ -174,40 +246,72 @@ section h2 {
   transform: scale(1.05);
 }
 
+
 /* =========================
-   PROJECTS
+   PORTFOLIO
 ========================= */
+
+#portfolio {
+  background: #eef2ff;
+}
+
+.portfolio-intro {
+  max-width: 700px;
+  margin: -20px auto 40px;
+  text-align: center;
+  color: #4b5563;
+  font-size: 18px;
+}
 
 .project-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
+  gap: 30px;
 }
 
 .project-item {
   background: white;
-  padding: 30px;
-  border-radius: 12px;
+  padding: 35px;
+  border-radius: 16px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
   transition: 0.3s;
+  border: 1px solid transparent;
 }
 
 .project-item:hover {
   transform: translateY(-8px);
+  border-color: #2563eb;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.15);
 }
 
 .project-item h3 {
   margin-bottom: 15px;
   color: #2563eb;
+  font-size: 23px;
+}
+
+.project-item p {
+  color: #4b5563;
+  margin-bottom: 15px;
 }
 
 .project-item a {
   display: inline-block;
-  margin-top: 20px;
-  color: #2563eb;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #2563eb;
+  color: white;
+  border-radius: 7px;
   font-weight: bold;
   text-decoration: none;
+  transition: 0.3s;
 }
+
+.project-item a:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
 
 /* =========================
    CONTACT
@@ -228,6 +332,7 @@ section h2 {
   font-weight: bold;
 }
 
+
 /* =========================
    FOOTER
 ========================= */
@@ -237,64 +342,6 @@ footer {
   color: white;
   text-align: center;
   padding: 25px;
-}
-
-/* =========================
-   MOBILE RESPONSIVENESS
-========================= */
-
-@media (max-width: 768px) {
-
-  .nav-container {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-  }
-
-  .hero h2 {
-    font-size: 38px;
-  }
-
-  .hero p {
-    font-size: 18px;
-  }
-
-  .service-list {
-    grid-template-columns: 1fr;
-  }
-
-  .project-list {
-    grid-template-columns: 1fr;
-  }
-
-  section {
-    padding: 60px 5%;
-  }
-
-  section h2 {
-    font-size: 30px;
-  }
-}
-/* =========================
-   DARK / LIGHT MODE BUTTON
-========================= */
-
-#theme-toggle {
-  border: none;
-  background: transparent;
-  font-size: 24px;
-  cursor: pointer;
-  padding: 8px;
-  transition: transform 0.3s ease;
-}
-
-#theme-toggle:hover {
-  transform: rotate(20deg) scale(1.1);
 }
 
 
@@ -334,10 +381,166 @@ body.dark-mode .project-item h3 {
   color: #60a5fa;
 }
 
+body.dark-mode .project-item p {
+  color: #d1d5db;
+}
+
 body.dark-mode .project-item a,
 body.dark-mode .contact-info a {
+  color: #ffffff;
+}
+
+body.dark-mode #portfolio {
+  background: #0f172a;
+}
+
+body.dark-mode .portfolio-intro {
+  color: #d1d5db;
+}
+
+
+/* =========================
+   MOBILE RESPONSIVENESS
+========================= */
+
+@media (max-width: 768px) {
+
+  .nav-container {
+    position: relative;
+    flex-direction: row;
+  }
+
+  #menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #111827;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 0;
+    gap: 20px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  #theme-toggle {
+    margin-left: 10px;
+  }
+
+  .hero h2 {
+    font-size: 38px;
+  }
+
+  .hero h3 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .service-list {
+    grid-template-columns: 1fr;
+  }
+
+  .project-list {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 60px 5%;
+  }
+
+  section h2 {
+    font-size: 30px;
+  }
+
+  .project-item {
+    padding: 25px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-button,
+  .secondary-button {
+    width: 100%;
+    max-width: 280px;
+  }
+
+}/* =========================
+   GENERAL STYLES
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #f5f7fb;
+  color: #222;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #111827;
+  padding: 15px 5%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-container h1 {
+  color: #ffffff;
+  font-size: 28px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
   color: #60a5fa;
 }
+
+
 /* =========================
    MOBILE MENU BUTTON
 ========================= */
@@ -353,7 +556,331 @@ body.dark-mode .contact-info a {
 
 
 /* =========================
-   MOBILE NAVIGATION
+   DARK / LIGHT MODE BUTTON
+========================= */
+
+#theme-toggle {
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+  transition: transform 0.3s ease;
+}
+
+#theme-toggle:hover {
+  transform: rotate(20deg) scale(1.1);
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+  padding: 90px 5%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+section h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #111827;
+}
+
+
+/* =========================
+   HOME / HERO
+========================= */
+
+#home {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #dbeafe, #f5f7fb);
+}
+
+.hero {
+  max-width: 800px;
+}
+
+.hero h2 {
+  font-size: 50px;
+  margin-bottom: 20px;
+  color: #111827;
+}
+
+.hero h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #2563eb;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: #4b5563;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.cta-button,
+.secondary-button {
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.cta-button {
+  background: #2563eb;
+  color: white;
+}
+
+.cta-button:hover {
+  background: #1d4ed8;
+  transform: translateY(-3px);
+}
+
+.secondary-button {
+  background: transparent;
+  color: #2563eb;
+  border: 2px solid #2563eb;
+}
+
+.secondary-button:hover {
+  background: #2563eb;
+  color: white;
+  transform: translateY(-3px);
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.service-item {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.service-item:hover {
+  transform: translateY(-8px);
+}
+
+.service-item h3 {
+  margin-bottom: 15px;
+  color: #2563eb;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  list-style: none;
+}
+
+.skills-list li {
+  background: #111827;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.skills-list li:hover {
+  background: #2563eb;
+  transform: scale(1.05);
+}
+
+
+/* =========================
+   PORTFOLIO
+========================= */
+
+#portfolio {
+  background: #eef2ff;
+}
+
+.portfolio-intro {
+  max-width: 700px;
+  margin: -20px auto 40px;
+  text-align: center;
+  color: #4b5563;
+  font-size: 18px;
+}
+
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.project-item {
+  background: white;
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+  border: 1px solid transparent;
+}
+
+.project-item:hover {
+  transform: translateY(-8px);
+  border-color: #2563eb;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.15);
+}
+
+.project-item h3 {
+  margin-bottom: 15px;
+  color: #2563eb;
+  font-size: 23px;
+}
+
+.project-item p {
+  color: #4b5563;
+  margin-bottom: 15px;
+}
+
+.project-item a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #2563eb;
+  color: white;
+  border-radius: 7px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.project-item a:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-info {
+  list-style: none;
+  text-align: center;
+}
+
+.contact-info li {
+  margin: 15px 0;
+}
+
+.contact-info a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  background: #111827;
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark-mode {
+  background: #111827;
+  color: #f9fafb;
+}
+
+body.dark-mode section h2 {
+  color: #f9fafb;
+}
+
+body.dark-mode #home {
+  background: #111827;
+}
+
+body.dark-mode .hero h2 {
+  color: #f9fafb;
+}
+
+body.dark-mode .hero p {
+  color: #d1d5db;
+}
+
+body.dark-mode .service-item,
+body.dark-mode .project-item {
+  background: #1f2937;
+  color: #f9fafb;
+}
+
+body.dark-mode .service-item h3,
+body.dark-mode .project-item h3 {
+  color: #60a5fa;
+}
+
+body.dark-mode .project-item p {
+  color: #d1d5db;
+}
+
+body.dark-mode .project-item a,
+body.dark-mode .contact-info a {
+  color: #ffffff;
+}
+
+body.dark-mode #portfolio {
+  background: #0f172a;
+}
+
+body.dark-mode .portfolio-intro {
+  color: #d1d5db;
+}
+
+
+/* =========================
+   MOBILE RESPONSIVENESS
 ========================= */
 
 @media (max-width: 768px) {
@@ -388,60 +915,47 @@ body.dark-mode .contact-info a {
     margin-left: 10px;
   }
 
-}
-/* =========================
-   MOBILE MENU BUTTON
-========================= */
-
-#menu-toggle {
-  display: none;
-  border: none;
-  background: transparent;
-  color: white;
-  font-size: 28px;
-  cursor: pointer;
-}
-
-
-/* =========================
-   MOBILE NAVIGATION
-========================= */
-
-@media (max-width: 768px) {
-
-  .nav-container {
-    position: relative;
-    flex-direction: row;
+  .hero h2 {
+    font-size: 38px;
   }
 
-  #menu-toggle {
-    display: block;
+  .hero h3 {
+    font-size: 24px;
   }
 
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background: #111827;
+  .hero p {
+    font-size: 18px;
+  }
+
+  .service-list {
+    grid-template-columns: 1fr;
+  }
+
+  .project-list {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 60px 5%;
+  }
+
+  section h2 {
+    font-size: 30px;
+  }
+
+  .project-item {
+    padding: 25px;
+  }
+
+  .hero-buttons {
     flex-direction: column;
-    text-align: center;
-    padding: 20px 0;
-    gap: 20px;
+    align-items: center;
   }
 
-  .nav-links.active {
-    display: flex;
-  }
-
-  #theme-toggle {
-    margin-left: 10px;
+  .cta-button,
+  .secondary-button {
+    width: 100%;
+    max-width: 280px;
   }
 
 }
-<section id="about">
-  <h2>About Me</h2>
-  <p>Hi, I'm oladimeji Ibrahim Collins, a computer science student with a passion for web development. I started exploring coding when I was in junior school, and since then, I've been dedicated to mastering web technologies.</p>
-  <p>My journey has been fueled by curiosity, and I'm constantly learning and improving my skills in web design and development. I aspire to create impactful digital experiences that help businesses grow and individuals thrive.</p>
-</section>
