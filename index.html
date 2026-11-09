@@ -1,317 +1,661 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KOLLINSKY | Web Developer</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Oladimeji Ibrahim Collins is a Computer Science student and web developer creating modern, responsive websites and digital experiences.">
+
+  <meta name="author" content="Oladimeji Ibrahim Collins">
+
+  <title>Oladimeji Ibrahim Collins | Web Developer</title>
+
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- NAVIGATION -->
-    <header class="header">
-        <a href="#home" class="logo">KOLLINSKY<span>.</span></a>
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
 
-        <nav class="navbar">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
+  <nav>
+    <div class="nav-container">
 
-        <a href="#contact" class="nav-btn">Let's Talk</a>
-    </header>
+      <h1>KOLLINS<span>.</span></h1>
 
-    <!-- HERO SECTION -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <p class="small-heading">WELCOME TO MY PORTFOLIO</p>
+      <button id="menu-toggle" aria-label="Open menu">
+        ☰
+      </button>
 
-            <h1>
-                I Build Modern <br>
-                <span>Web Experiences.</span>
-            </h1>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#support">Support</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
 
-            <p class="hero-description">
-                I'm Kollinsky, a passionate Computer Science student and web developer
-                creating responsive, modern, and user-friendly websites for individuals
-                and businesses.
-            </p>
+      <button id="theme-toggle" aria-label="Toggle dark mode">
+        🌙
+      </button>
 
-            <div class="hero-buttons">
-                <a href="#projects" class="btn primary-btn">View My Work</a>
-                <a href="#contact" class="btn secondary-btn">Contact Me</a>
-            </div>
+    </div>
+  </nav>
 
-            <div class="hero-stats">
-                <div>
-                    <h3>HTML</h3>
-                    <p>Structure</p>
-                </div>
 
-                <div>
-                    <h3>CSS</h3>
-                    <p>Design</p>
-                </div>
+  <!-- =========================
+       HOME SECTION
+  ========================== -->
 
-                <div>
-                    <h3>JavaScript</h3>
-                    <p>Functionality</p>
-                </div>
-            </div>
-        </div>
+  <section id="home">
 
-        <div class="hero-visual">
-            <div class="hero-card">
-                <div class="code-header">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+    <div class="hero">
 
-                <div class="code-content">
-                    <p><span class="code-purple">const</span> developer = {</p>
-                    <p class="indent">name: <span class="code-green">"Kollinsky"</span>,</p>
-                    <p class="indent">role: <span class="code-green">"Web Developer"</span>,</p>
-                    <p class="indent">passion: <span class="code-green">"Building Websites"</span></p>
-                    <p>};</p>
-                    <br>
-                    <p><span class="code-purple">function</span> <span class="code-blue">create</span>() {</p>
-                    <p class="indent">return <span class="code-green">"Something Amazing"</span>;</p>
-                    <p>}</p>
-                </div>
-            </div>
-        </div>
-    </section>
+      <p class="hero-label">WELCOME TO MY DIGITAL SPACE</p>
 
-    <!-- ABOUT SECTION -->
-    <section class="about section" id="about">
-        <div class="section-heading">
-            <p class="small-heading">GET TO KNOW ME</p>
-            <h2>About <span>Me</span></h2>
-        </div>
+      <h2>Hi, I'm <span>Oladimeji Ibrahim Collins</span> 👋</h2>
 
-        <div class="about-container">
+      <h3>
+        I'm a
+        <span id="typing-text"></span>
+      </h3>
 
-            <div class="about-image">
-                <div class="image-frame">
-                    <img
-                        src="https://kommodo.ai/i/YRqQDUK9QkBr6wXZGQDN"
-                        alt="Kollinsky - Web Developer"
-                    >
-                </div>
+      <p>
+        I create modern, responsive, and user-friendly websites
+        and web applications that help individuals and businesses
+        build their online presence.
 
-                <div class="image-badge">
-                    <span>💻</span>
-                    <p>Computer Science<br>Student</p>
-                </div>
-            </div>
+        I believe technology is a powerful tool for solving problems,
+        creating opportunities, and making ideas become reality.
+      </p>
 
-            <div class="about-content">
-                <h3>I'm Kollinsky</h3>
+      <div class="hero-buttons">
 
-                <p class="about-role">
-                    ND Computer Science Student | Aspiring Web Developer
-                </p>
+        <a href="#portfolio" class="cta-button">
+          Explore My Work
+        </a>
 
-                <p>
-                    I am a Computer Science student at Ibadan City Polytechnic,
-                    passionate about technology, web development, and creating
-                    digital solutions that make a difference.
-                </p>
+        <a href="#contact" class="secondary-button">
+          Let's Work Together
+        </a>
 
-                <p>
-                    I enjoy building websites using HTML, CSS, and JavaScript.
-                    My goal is to develop my skills, work with businesses,
-                    and create modern digital experiences.
-                </p>
+      </div>
 
-                <div class="about-details">
-                    <div>
-                        <span>Name:</span>
-                        <p>Kollinsky</p>
-                    </div>
+      <div class="hero-highlight">
+        <span>💻</span>
+        <p>Building ideas into digital experiences.</p>
+      </div>
 
-                    <div>
-                        <span>School:</span>
-                        <p>Ibadan City Polytechnic</p>
-                    </div>
+    </div>
 
-                    <div>
-                        <span>Program:</span>
-                        <p>ND Computer Science</p>
-                    </div>
+  </section>
 
-                    <div>
-                        <span>Focus:</span>
-                        <p>Web Development</p>
-                    </div>
-                </div>
 
-                <a href="#contact" class="btn primary-btn">Work With Me</a>
-            </div>
+  <!-- =========================
+       ABOUT ME / OWNER INFORMATION
+  ========================== -->
+
+  <section id="about">
+
+    <div class="section-heading">
+      <p class="section-label">GET TO KNOW THE OWNER</p>
+      <h2>About <span>Me</span></h2>
+    </div>
+
+    <div class="about-container">
+
+      <div class="owner-image-container">
+
+        <div class="owner-image-frame">
+
+          <img
+            src="https://kommodo.ai/i/YRqQDUK9QkBr6wXZGQDN"
+            alt="Oladimeji Ibrahim Collins"
+            class="owner-image"
+          >
 
         </div>
-    </section>
 
-    <!-- SERVICES SECTION -->
-    <section class="services section" id="services">
-        <div class="section-heading">
-            <p class="small-heading">WHAT I CAN DO</p>
-            <h2>My <span>Services</span></h2>
+        <div class="owner-image-caption">
+          <span class="online-dot"></span>
+          Passionate about Technology
         </div>
 
-        <div class="services-container">
+      </div>
 
-            <div class="service-card">
-                <div class="service-icon">🌐</div>
-                <h3>Website Development</h3>
-                <p>
-                    I create modern, responsive websites for businesses,
-                    personal brands, and organizations.
-                </p>
-            </div>
 
-            <div class="service-card">
-                <div class="service-icon">🎨</div>
-                <h3>Website Design</h3>
-                <p>
-                    I design clean and attractive website layouts that
-                    provide a great user experience.
-                </p>
-            </div>
+      <div class="about-content">
 
-            <div class="service-card">
-                <div class="service-icon">📱</div>
-                <h3>Responsive Design</h3>
-                <p>
-                    I build websites that work smoothly on mobile phones,
-                    tablets, and desktop computers.
-                </p>
-            </div>
+        <p class="about-small-title">THE PERSON BEHIND THE WORK</p>
 
-        </div>
-    </section>
+        <h3>Oladimeji Ibrahim Collins</h3>
 
-    <!-- PROJECTS SECTION -->
-    <section class="projects section" id="projects">
-        <div class="section-heading">
-            <p class="small-heading">MY RECENT WORK</p>
-            <h2>Featured <span>Projects</span></h2>
-        </div>
+        <h4>Web Developer | Computer Science Student</h4>
 
-        <div class="projects-container">
-
-            <div class="project-card">
-                <div class="project-image project-one">
-                    <span>DENFILUX</span>
-                </div>
-
-                <div class="project-content">
-                    <h3>DENFILUX Fashion Website</h3>
-
-                    <p>
-                        A modern fashion website showcasing clothing collections
-                        and helping customers explore products.
-                    </p>
-
-                    <div class="project-tags">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                    </div>
-
-                    <a href="https://denfilux.com" target="_blank" rel="noopener">
-                        View Project ↗
-                    </a>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image project-two">
-                    <span>PORTFOLIO</span>
-                </div>
-
-                <div class="project-content">
-                    <h3>Personal Portfolio</h3>
-
-                    <p>
-                        A personal website showcasing my skills, projects,
-                        and services as a web developer.
-                    </p>
-
-                    <div class="project-tags">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                    </div>
-
-                    <a href="https://kollins451.github.io/My-first-website-/" target="_blank" rel="noopener">
-                        View Project ↗
-                    </a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section class="contact section" id="contact">
-        <div class="section-heading">
-            <p class="small-heading">LET'S WORK TOGETHER</p>
-            <h2>Get In <span>Touch</span></h2>
-        </div>
-
-        <div class="contact-container">
-            <div class="contact-content">
-                <h3>Have a project in mind?</h3>
-
-                <p>
-                    Let's work together to bring your ideas to life.
-                    Contact me today to discuss your website project.
-                </p>
-
-                <div class="contact-info">
-                    <p>📧 Email: your-email@example.com</p>
-                    <p>📱 WhatsApp: +234 000 000 0000</p>
-                </div>
-            </div>
-
-            <div class="contact-buttons">
-                <a
-                    href="https://wa.me/2340000000000"
-                    target="_blank"
-                    rel="noopener"
-                    class="btn primary-btn"
-                >
-                    Chat on WhatsApp
-                </a>
-
-                <a
-                    href="mailto:your-email@example.com"
-                    class="btn secondary-btn"
-                >
-                    Send an Email
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <a href="#home" class="logo">KOLLINSKY<span>.</span></a>
-
-        <p>Building digital experiences with passion and creativity.</p>
-
-        <p class="copyright">
-            © 2026 Kollinsky. All rights reserved.
+        <p>
+          My name is Oladimeji Ibrahim Collins, popularly known
+          as Kollins. I am a passionate technology enthusiast
+          and aspiring web developer with a strong interest in
+          building useful digital solutions.
         </p>
-    </footer>
 
-    <script src="script.js"></script>
+        <p>
+          I am currently studying National Diploma (ND) in
+          Computer Science at Ibadan City Polytechnic.
+          My academic journey continues to strengthen my
+          understanding of computing, programming, and technology.
+        </p>
+
+        <p>
+          I enjoy creating websites, exploring new technologies,
+          solving problems, and turning creative ideas into
+          functional digital experiences.
+        </p>
+
+        <p>
+          My goal is to continue developing my technical abilities,
+          work on meaningful projects, collaborate with businesses,
+          and grow into a highly skilled software and web developer.
+        </p>
+
+
+        <div class="owner-details">
+
+          <div class="owner-detail">
+            <span>FULL NAME</span>
+            <p>Oladimeji Ibrahim Collins</p>
+          </div>
+
+          <div class="owner-detail">
+            <span>PROFESSIONAL NAME</span>
+            <p>Kollins</p>
+          </div>
+
+          <div class="owner-detail">
+            <span>INSTITUTION</span>
+            <p>Ibadan City Polytechnic</p>
+          </div>
+
+          <div class="owner-detail">
+            <span>PROGRAM</span>
+            <p>ND Computer Science</p>
+          </div>
+
+          <div class="owner-detail">
+            <span>FIELD</span>
+            <p>Web Development</p>
+          </div>
+
+          <div class="owner-detail">
+            <span>INTERESTS</span>
+            <p>Technology, Programming & Innovation</p>
+          </div>
+
+        </div>
+
+        <a href="#contact" class="cta-button">
+          Contact Me
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       SERVICES
+  ========================== -->
+
+  <section id="services">
+
+    <div class="section-heading">
+      <p class="section-label">WHAT I CAN DO FOR YOU</p>
+      <h2>My <span>Services</span></h2>
+    </div>
+
+    <p class="section-description">
+      I help individuals, entrepreneurs, and businesses
+      establish a professional online presence through
+      modern and responsive website solutions.
+    </p>
+
+    <div class="service-list">
+
+      <div class="service-item">
+        <div class="service-icon">🌐</div>
+
+        <h3>Website Design</h3>
+
+        <p>
+          I create modern and attractive website designs
+          that represent your brand, communicate your message,
+          and make a strong first impression.
+        </p>
+
+      </div>
+
+
+      <div class="service-item">
+        <div class="service-icon">💻</div>
+
+        <h3>Website Development</h3>
+
+        <p>
+          I build responsive websites using HTML, CSS,
+          and JavaScript that work across phones,
+          tablets, and computers.
+        </p>
+
+      </div>
+
+
+      <div class="service-item">
+        <div class="service-icon">⚙️</div>
+
+        <h3>Website Maintenance</h3>
+
+        <p>
+          I help update, improve, and maintain websites
+          to keep their content fresh and their features
+          working properly.
+        </p>
+
+      </div>
+
+
+      <div class="service-item">
+        <div class="service-icon">📱</div>
+
+        <h3>Responsive Design</h3>
+
+        <p>
+          I make websites adaptable to different screen sizes
+          to provide visitors with a smooth experience
+          on mobile and desktop devices.
+        </p>
+
+      </div>
+
+
+      <div class="service-item">
+        <div class="service-icon">🚀</div>
+
+        <h3>Personal Websites</h3>
+
+        <p>
+          I create personal portfolio websites that help
+          individuals showcase their achievements, skills,
+          projects, and professional identity.
+        </p>
+
+      </div>
+
+
+      <div class="service-item">
+        <div class="service-icon">🏢</div>
+
+        <h3>Business Websites</h3>
+
+        <p>
+          I develop websites that help businesses present
+          their services, reach potential customers,
+          and build credibility online.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       SKILLS
+  ========================== -->
+
+  <section id="skills">
+
+    <div class="section-heading">
+      <p class="section-label">MY TECHNICAL FOUNDATION</p>
+      <h2>My <span>Skills</span></h2>
+    </div>
+
+    <p class="section-description">
+      These are some of the technologies and tools
+      I work with as I continue developing my abilities.
+    </p>
+
+    <div class="skills-list">
+
+      <li>HTML5</li>
+      <li>CSS3</li>
+      <li>JavaScript</li>
+      <li>Responsive Design</li>
+      <li>GitHub</li>
+      <li>Web Development</li>
+
+    </div>
+
+    <div class="learning-box">
+
+      <h3>Always Learning. Always Improving.</h3>
+
+      <p>
+        Technology keeps evolving, and so do I.
+        I am committed to continuous learning,
+        improving my programming skills, and
+        exploring new areas of computer science.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PORTFOLIO
+  ========================== -->
+
+  <section id="portfolio">
+
+    <div class="section-heading">
+      <p class="section-label">SOME OF MY WORK</p>
+      <h2>My <span>Portfolio</span></h2>
+    </div>
+
+    <p class="portfolio-intro">
+      Here are some of the projects I have created
+      and worked on as I continue growing my skills
+      in web development and digital technology.
+    </p>
+
+
+    <div class="project-list">
+
+
+      <div class="project-item">
+
+        <div class="project-card-top">
+          <span>01</span>
+          <span>WEB APPLICATION</span>
+        </div>
+
+        <div class="project-icon">🧮</div>
+
+        <h3>Kollins Calculator</h3>
+
+        <p>
+          A modern calculator web application designed
+          to provide useful calculation tools and a simple,
+          user-friendly experience.
+        </p>
+
+        <div class="project-tags">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+        </div>
+
+        <a
+          href="https://calculator-app-rust-ten.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Live Project ↗
+        </a>
+
+      </div>
+
+
+
+      <div class="project-item">
+
+        <div class="project-card-top">
+          <span>02</span>
+          <span>PERSONAL BRAND</span>
+        </div>
+
+        <div class="project-icon">👨‍💻</div>
+
+        <h3>My Personal Website</h3>
+
+        <p>
+          My personal portfolio website where I showcase
+          my skills, services, projects, and my journey
+          as a developing web developer.
+        </p>
+
+        <div class="project-tags">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+        </div>
+
+        <a
+          href="https://kollins451.github.io/My-first-website-/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Live Project ↗
+        </a>
+
+      </div>
+
+
+
+      <div class="project-item">
+
+        <div class="project-card-top">
+          <span>03</span>
+          <span>BUSINESS WEBSITE</span>
+        </div>
+
+        <div class="project-icon">🏢</div>
+
+        <h3>Business Website Projects</h3>
+
+        <p>
+          Professional website projects designed to help
+          businesses present their services, showcase
+          their brands, and build an online presence.
+        </p>
+
+        <div class="project-tags">
+          <span>Web Design</span>
+          <span>Development</span>
+        </div>
+
+        <a href="#contact">
+          Get In Touch ↗
+        </a>
+
+      </div>
+
+
+
+      <div class="project-item">
+
+        <div class="project-card-top">
+          <span>04</span>
+          <span>UPCOMING WORK</span>
+        </div>
+
+        <div class="project-icon">🚀</div>
+
+        <h3>Future Projects</h3>
+
+        <p>
+          More web applications, digital projects,
+          and technology experiments will be added
+          as I continue learning and building
+          new solutions.
+        </p>
+
+        <div class="project-tags">
+          <span>Innovation</span>
+          <span>Programming</span>
+        </div>
+
+        <a href="#contact">
+          Stay Connected ↗
+        </a>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       SUPPORT THE PROJECT
+  ========================== -->
+
+  <section id="support">
+
+    <div class="support-content">
+
+      <p class="section-label">SUPPORT THE JOURNEY</p>
+
+      <h2>Support My <span>Work</span> ❤️</h2>
+
+      <p>
+        Every great project starts with an idea,
+        and every growing developer benefits from
+        encouragement and support.
+      </p>
+
+      <p>
+        If you find my projects useful and would like
+        to support my work and future development,
+        your contribution is appreciated.
+      </p>
+
+      <p>
+        Your support helps me continue learning,
+        building useful web applications, and
+        improving my digital projects.
+      </p>
+
+      <a href="#" class="cta-button">
+        ❤️ Support My Work
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CONTACT
+  ========================== -->
+
+  <section id="contact">
+
+    <div class="section-heading">
+      <p class="section-label">LET'S CONNECT</p>
+      <h2>Get In <span>Touch</span></h2>
+    </div>
+
+    <p class="section-description">
+      Have a project, business idea, or collaboration
+      in mind? I would be happy to hear from you.
+      Let's create something valuable together.
+    </p>
+
+    <div class="contact-container">
+
+      <div class="contact-card">
+
+        <div class="contact-icon">📧</div>
+
+        <h3>Email</h3>
+
+        <p>Reach out to me through email.</p>
+
+        <a href="mailto:oladimejikollins07@gmail.com">
+          oladimejikollins07@gmail.com
+        </a>
+
+      </div>
+
+
+      <div class="contact-card">
+
+        <div class="contact-icon">📱</div>
+
+        <h3>WhatsApp</h3>
+
+        <p>Let's discuss your next project.</p>
+
+        <a
+          href="https://wa.me/2348144680457"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Chat with me
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="contact-note">
+
+      <h3>Let's Build Something Great.</h3>
+
+      <p>
+        I am open to website projects, learning opportunities,
+        collaborations, and meaningful connections.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <h2>KOLLINS<span>.</span></h2>
+
+    <p>
+      Oladimeji Ibrahim Collins
+    </p>
+
+    <p>
+      Creating digital experiences with passion,
+      creativity, and continuous learning.
+    </p>
+
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <p class="copyright">
+      © 2026 Oladimeji Ibrahim Collins.
+      All Rights Reserved.
+    </p>
+
+  </footer>
+
+
+  <!-- ORIGINAL JAVASCRIPT CONNECTION -->
+
+  <script src="script.js"></script>
+
 </body>
 </html>
