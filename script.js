@@ -1,170 +1,90 @@
-// =========================
-// SMOOTH SCROLLING
-// =========================
+// MOBILE NAVIGATION
 
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener("click", function (e) {
+const menuButton = document.querySelector('.menu-toggle');
+const nav = document.querySelector('.nav');
 
-    const href = this.getAttribute("href");
+menuButton?.addEventListener('click', () => {
 
-    // Ignore empty "#" links
-    if (!href || href === "#") {
-      return;
+  const isOpen = nav.classList.toggle('open');
+
+  menuButton.setAttribute(
+    'aria-expanded',
+    String(isOpen)
+  );
+
+  menuButton.textContent = isOpen ? '×' : '☰';
+
+});
+
+
+// CLOSE MOBILE MENU WHEN A LINK IS CLICKED
+
+nav?.querySelectorAll('a').forEach(link => {
+
+  link.addEventListener('click', () => {
+
+    nav.classList.remove('open');
+
+    menuButton?.setAttribute(
+      'aria-expanded',
+      'false'
+    );
+
+    if (menuButton) {
+      menuButton.textContent = '☰';
     }
 
-    const target = document.querySelector(href);
+  });
 
-    if (target) {
-      e.preventDefault();
+});
 
-      target.scrollIntoView({
-        behavior: "smooth"
+
+// REVEAL SECTIONS AS THEY ENTER THE VIEWPORT
+
+const revealItems = document.querySelectorAll('.reveal');
+
+if ('IntersectionObserver' in window) {
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+          entry.target.classList.add('visible');
+
+          obs.unobserve(entry.target);
+
+        }
+
       });
+
+    },
+    {
+      threshold: 0.12
     }
+  );
 
-  });
-});
-
-
-// =========================
-// SCROLL REVEAL ANIMATION
-// =========================
-
-const sections = document.querySelectorAll("section");
-
-const revealSections = () => {
-
-  sections.forEach(section => {
-
-    const sectionTop = section.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
-
-    if (sectionTop < windowHeight - 100) {
-      section.classList.add("show-section");
-    }
-
+  revealItems.forEach(item => {
+    observer.observe(item);
   });
 
-};
+} else {
 
-window.addEventListener("scroll", revealSections);
-
-revealSections();
-
-
-// =========================
-// BACK TO TOP BUTTON
-// =========================
-
-const backToTop = document.createElement("button");
-
-backToTop.innerHTML = "↑";
-backToTop.className = "back-to-top";
-backToTop.setAttribute("aria-label", "Back to top");
-
-document.body.appendChild(backToTop);
-
-window.addEventListener("scroll", () => {
-
-  if (window.scrollY > 500) {
-    backToTop.classList.add("show");
-  } else {
-    backToTop.classList.remove("show");
-  }
-
-});
-
-backToTop.addEventListener("click", () => {
-
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-
-});
-
-
-// =========================
-// WELCOME MESSAGE
-// =========================
-
-window.addEventListener("load", () => {
-
-  console.log("Welcome to Kollins Portfolio!");
-
-});
-
-
-// =========================
-// DARK / LIGHT MODE
-// =========================
-
-const themeToggle = document.getElementById("theme-toggle");
-
-if (themeToggle) {
-
-  themeToggle.addEventListener("click", () => {
-
-    document.body.classList.toggle("dark-mode");
-
-    if (document.body.classList.contains("dark-mode")) {
-
-      themeToggle.innerHTML = "☀️";
-      themeToggle.setAttribute("aria-label", "Switch to light mode");
-
-    } else {
-
-      themeToggle.innerHTML = "🌙";
-      themeToggle.setAttribute("aria-label", "Switch to dark mode");
-
-    }
-
+  revealItems.forEach(item => {
+    item.classList.add('visible');
   });
 
 }
 
 
-// =========================
-// MOBILE MENU
-// =========================
+// UPDATE COPYRIGHT YEAR AUTOMATICALLY
 
-const menuToggle = document.getElementById("menu-toggle");
-const navLinks = document.getElementById("nav-links");
+const year = document.querySelector('#year');
 
-if (menuToggle && navLinks) {
+if (year) {
 
-  menuToggle.addEventListener("click", () => {
-
-    navLinks.classList.toggle("active");
-
-    if (navLinks.classList.contains("active")) {
-
-      menuToggle.innerHTML = "✕";
-      menuToggle.setAttribute("aria-label", "Close menu");
-
-    } else {
-
-      menuToggle.innerHTML = "☰";
-      menuToggle.setAttribute("aria-label", "Open menu");
-
-    }
-
-  });
-
-
-  // Close menu when a navigation link is clicked
-
-  document.querySelectorAll(".nav-links a").forEach(link => {
-
-    link.addEventListener("click", () => {
-
-      navLinks.classList.remove("active");
-
-      menuToggle.innerHTML = "☰";
-      menuToggle.setAttribute("aria-label", "Open menu");
-
-    });
-
-  });
+  year.textContent = new Date().getFullYear();
 
 }
