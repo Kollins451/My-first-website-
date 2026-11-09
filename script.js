@@ -1,90 +1,162 @@
-// MOBILE NAVIGATION
+// =========================
+// SMOOTH SCROLLING
+// =========================
 
-const menuButton = document.querySelector('.menu-toggle');
-const nav = document.querySelector('.nav');
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
 
-menuButton?.addEventListener('click', () => {
+    const target = document.querySelector(this.getAttribute("href"));
 
-  const isOpen = nav.classList.toggle('open');
-
-  menuButton.setAttribute(
-    'aria-expanded',
-    String(isOpen)
-  );
-
-  menuButton.textContent = isOpen ? '×' : '☰';
-
-});
-
-
-// CLOSE MOBILE MENU WHEN A LINK IS CLICKED
-
-nav?.querySelectorAll('a').forEach(link => {
-
-  link.addEventListener('click', () => {
-
-    nav.classList.remove('open');
-
-    menuButton?.setAttribute(
-      'aria-expanded',
-      'false'
-    );
-
-    if (menuButton) {
-      menuButton.textContent = '☰';
-    }
-
-  });
-
-});
-
-
-// REVEAL SECTIONS AS THEY ENTER THE VIEWPORT
-
-const revealItems = document.querySelectorAll('.reveal');
-
-if ('IntersectionObserver' in window) {
-
-  const observer = new IntersectionObserver(
-    (entries, obs) => {
-
-      entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-          entry.target.classList.add('visible');
-
-          obs.unobserve(entry.target);
-
-        }
-
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth"
       });
-
-    },
-    {
-      threshold: 0.12
     }
-  );
+  });
+});
 
-  revealItems.forEach(item => {
-    observer.observe(item);
+
+// =========================
+// SCROLL REVEAL ANIMATION
+// =========================
+
+const sections = document.querySelectorAll("section");
+
+const revealSections = () => {
+  sections.forEach(section => {
+    const sectionTop = section.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (sectionTop < windowHeight - 100) {
+      section.classList.add("show-section");
+    }
+  });
+};
+
+window.addEventListener("scroll", revealSections);
+
+revealSections();
+
+
+// =========================
+// BACK TO TOP BUTTON
+// =========================
+
+const backToTop = document.createElement("button");
+
+backToTop.innerHTML = "↑";
+backToTop.className = "back-to-top";
+
+document.body.appendChild(backToTop);
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 500) {
+    backToTop.classList.add("show");
+  } else {
+    backToTop.classList.remove("show");
+  }
+});
+
+backToTop.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
+
+// =========================
+// WELCOME MESSAGE
+// =========================
+
+window.addEventListener("load", () => {
+  console.log("Welcome to Kollins Portfolio!");
+});
+// =========================
+// DARK / LIGHT MODE
+// =========================
+
+const themeToggle = document.getElementById("theme-toggle");
+
+themeToggle.addEventListener("click", () => {
+
+  document.body.classList.toggle("dark-mode");
+
+  if (document.body.classList.contains("dark-mode")) {
+
+    themeToggle.innerHTML = "☀️";
+
+  } else {
+
+    themeToggle.innerHTML = "🌙";
+
+  }
+
+});
+// =========================
+// MOBILE MENU
+// =========================
+
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+menuToggle.addEventListener("click", () => {
+
+  navLinks.classList.toggle("active");
+
+  if (navLinks.classList.contains("active")) {
+    menuToggle.innerHTML = "✕";
+  } else {
+    menuToggle.innerHTML = "☰";
+  }
+
+});
+
+
+// Close menu when a link is clicked
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+  link.addEventListener("click", () => {
+
+    navLinks.classList.remove("active");
+
+    menuToggle.innerHTML = "☰";
+
   });
 
-} else {
+});
+// =========================
+// MOBILE MENU
+// =========================
 
-  revealItems.forEach(item => {
-    item.classList.add('visible');
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+menuToggle.addEventListener("click", () => {
+
+  navLinks.classList.toggle("active");
+
+  if (navLinks.classList.contains("active")) {
+    menuToggle.innerHTML = "✕";
+  } else {
+    menuToggle.innerHTML = "☰";
+  }
+
+});
+
+
+// Close menu when a link is clicked
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+  link.addEventListener("click", () => {
+
+    navLinks.classList.remove("active");
+
+    menuToggle.innerHTML = "☰";
+
   });
 
-}
-
-
-// UPDATE COPYRIGHT YEAR AUTOMATICALLY
-
-const year = document.querySelector('#year');
-
-if (year) {
-
-  year.textContent = new Date().getFullYear();
-
-}
+});
